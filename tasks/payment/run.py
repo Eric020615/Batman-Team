@@ -3,14 +3,15 @@ import os
 CASE_DIR = os.path.join(os.path.dirname(__file__), "cases")
 
 test_cases = next(os.walk(CASE_DIR))[2]
-#print(len(test_cases))
+print(len(test_cases))
 for case in sorted(test_cases):
     with open(os.path.join(CASE_DIR, case), 'r') as f:
         while True:
             line = f.readline()
             if line == "END\n":
-                print("REBOOT")
-                break
+                #print("REBOOT")
+                #break
+                quit()
             if line != "CLEAR\n":
                 print(line, end="")
             else:
