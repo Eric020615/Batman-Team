@@ -10,7 +10,7 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v2
       - name: Compile solution
-        run: javac solutions/Fibonacci.java
+        run: javac solutions/fibonacci/Fibonacci.java
       - name: Test 1
         run: time bash tasks/fibonacci/run.sh
       - name: Test 2
