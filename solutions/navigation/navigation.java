@@ -1,5 +1,6 @@
 package navigation;
 
+import navigation.UnweightedGraph;
 import java.util.*;
 import java.io.*;
 public class navigation {
