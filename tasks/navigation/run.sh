@@ -2,6 +2,8 @@
 #!/bin/bash
 VERBOSE=$1
 TIMELIMIT=3s
+SOLUTION_FILE=navigation
+RUNNER_FILE=tasks/navigation/run.py
 mkfifo iopipe0 iopipe1
 
 if [[ $VERBOSE ]]
