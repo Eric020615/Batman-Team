@@ -19,7 +19,7 @@ jobs:
         run: time bash tasks/fibonacci/run.sh
 
   Test-Payment:
-    runs-on: ubuntu-16.04
+    runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
