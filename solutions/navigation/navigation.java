@@ -4,6 +4,17 @@ import navigation.UnweightedGraph;
 import java.util.*;
 import java.io.*;
 public class navigation {
+    public static class Edge  {
+        public int  u;
+        public int  v;
+
+        public Edge(int u, int v) {
+            this.u = u;
+            this.v = v;
+        }
+    }
+    
+    
     public static void main(String[] args) throws IOException {
         HashMap<String,Integer> place = new HashMap<String , Integer>();
         UnweightedGraph<String> obj = new UnweightedGraph();
