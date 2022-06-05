@@ -2,7 +2,7 @@
 #!/bin/bash
 VERBOSE=$1
 TIMELIMIT=3s
-SOLUTION_FILE=navigation
+SOLUTION_FILE=navigation/navigation.java
 RUNNER_FILE=tasks/navigation/run.py
 mkfifo iopipe0 iopipe1
 
