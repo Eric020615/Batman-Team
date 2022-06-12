@@ -313,8 +313,6 @@ Sri Aman => Kota Belud
 Sri Aman => Tebedu
 Labuan => Ledang
 Labuan => Mukah
-QUERIES
-100
 Segamat -> Hulu Perak
 Samarahan -> Machang
 Tawau -> Tuaran
