@@ -310,8 +310,6 @@ Lubok Antu => Cameron Highlands
 Sri Aman => Kuala Krai
 Labuan => Jasin
 Labuan => Papar
-QUERIES
-100
 Bau -> Marudi
 Dungun -> North-East Penang Island
 Kuala Terengganu -> Baling
