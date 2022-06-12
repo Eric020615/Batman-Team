@@ -310,8 +310,6 @@ Labuan => Setiawangsa
 Labuan => Pasir Mas
 Labuan => Kerian
 Labuan => Hulu Perak
-QUERIES
-10000
 Julau -> Hilir Perak
 Papar -> Tebedu
 Rembau -> South Seberang Perai
