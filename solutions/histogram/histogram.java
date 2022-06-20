@@ -54,7 +54,7 @@ public class histogram {
     public static void main(String[] args) throws IOException {
         MergeSort ms = new MergeSort();
         long startime = new Date().getTime();
-        File dir = new File("Batman-Team/solutions/histogram/cases");
+        File dir = new File("C:\\Users\\USER\\IdeaProjects\\Batman-Team\\solutions\\histogram\\cases");
         File[] files = dir.listFiles();
         for (File file : files) {
             if (file.isFile()) {
