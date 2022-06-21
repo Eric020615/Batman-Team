@@ -7,16 +7,14 @@ test_cases = next(os.walk(CASE_DIR))[2]
 print(len(test_cases))
 for case in sorted(test_cases):
     with open(os.path.join(CASE_DIR, case), 'r') as f:
-        a1 = f.readline()
-        a2 = f.readline()
-        print(a1, end='')
-        print(a2, end='', flush=True)
+        print(f.readline(), end='')
+        print(f.readline(), end='', flush=True)
         f.readline()
-        cutoffs: List[int] = list(map(int, a1.split()))
-        counts: List[int] = list(map(int, a2.split()))
-            
-        user_cutoffs: List[int] = list(map(int, f.readline().split()))
-        user_counts: List[int] = list(map(int, f.readline().split()))
+        cutoffs: List[int] = list(map(int, f.readline().split()))
+        counts: List[int] = list(map(int, f.readline().split()))
+        
+        user_cutoffs: List[int] = list(map(int, input().split()))
+        user_counts: List[int] = list(map(int, input().split()))
         
         if cutoffs != user_cutoffs:
             raise ValueError("Wrong cutoffs")
