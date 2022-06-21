@@ -13,7 +13,7 @@ for case in sorted(test_cases):
         cutoffs: List[int] = list(map(int, f.readline().split()))
         counts: List[int] = list(map(int, f.readline().split()))
         
-        user_cutoffs: List[int] = list(map(int, input().split()))
+        user_cutoffs: List[int] = list(map(int, f.readline().split()))
         user_counts: List[int] = list(map(int, input().split()))
         
         if cutoffs != user_cutoffs:
