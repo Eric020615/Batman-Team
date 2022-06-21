@@ -309,6 +309,8 @@ Sri Aman => Sepang
 Sri Aman => Besut
 Labuan => Larut Matang
 Labuan => Kota Setar
+QUERIES
+100
 Hulu Perak -> Sik
 Tuaran -> Bau
 Seputeh -> Papar
