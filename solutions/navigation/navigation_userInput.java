@@ -8,6 +8,17 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class navigation_userInput {
+       public static class Edge  {
+            public int  u;  //starting vertex of the edge
+            public int  v;  //ending vertex of the edge
+
+            /**Construct an edge for(u,v) */
+            public Edge(int u, int v) {
+                this.u = u;
+                this.v = v;
+            }
+       }
+
         public static class UnweightedGraph<V> {
             List<V> vertices = new ArrayList<>();
             List<List<Edge>> neighbors = new ArrayList<>();
@@ -220,7 +231,7 @@ public class navigation_userInput {
         String word;
         //prompt user to input the source and destination and read from file to find them
         try {
-            sc = new Scanner(new FileInputStream("C:\\Users\\USER\\IdeaProjects\\Batman-Team\\solutions\\navigation\\AllConnection.txt"));
+            sc = new Scanner(new FileInputStream("AllConnection.txt"));
             int index = 0;
             System.out.print("Please enter source : ");
             String source = scr.nextLine();
