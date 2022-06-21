@@ -14,7 +14,7 @@ for case in sorted(test_cases):
         counts: List[int] = list(map(int, f.readline().split()))
         
         user_cutoffs: List[int] = list(map(int, f.readline().split()))
-        user_counts: List[int] = list(map(int, input().split()))
+        user_counts: List[int] = list(map(int, f.readline().split()))
         
         if cutoffs != user_cutoffs:
             raise ValueError("Wrong cutoffs")
