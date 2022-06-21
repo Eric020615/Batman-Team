@@ -24,7 +24,7 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v2
       - name: Compile solution
-        run: javac solutions/payment/payment.java
+        run: javac solutions/payment/payment_user_input.java
       - name: Test 1
         run: time bash tasks/payment/run.sh
       - name: Test 2
