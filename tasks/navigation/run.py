@@ -23,8 +23,8 @@ for case in sorted(test_cases):
             adj[q].add(p)
 
         f.readline()
-        num_queries = int(f.readline())
-        print(num_queries)
+        #num_queries = int(f.readline())
+        #print(num_queries)
         for _ in range(num_queries):
             line = f.readline()
             print(line, end="")
