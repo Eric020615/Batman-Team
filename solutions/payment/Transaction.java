@@ -5,10 +5,10 @@ public class Transaction implements Comparable<Transaction> {
     private String id;
     private String tier;
 
-    public Transaction(long time,String id,String tier){
-        this.time=time;
-        this.id=id;
-        this.tier=tier;
+    public Transaction(long time, String id, String tier) {
+        this.time = time;
+        this.id = id;
+        this.tier = tier;
     }
 
     public long getTime() {
@@ -37,17 +37,16 @@ public class Transaction implements Comparable<Transaction> {
 
     @Override
     public String toString() {
-        return time+" "+id+" "+tier;
+        return time + " " + id + " " + tier;
     }
 
     @Override
     public int compareTo(Transaction o) {
-        if(this.getTime()>o.getTime())
+        if (this.getTime() > o.getTime())
             return -1;
-        else if(this.getTime()<o.getTime())
+        else if (this.getTime() < o.getTime())
             return 1;
         else
             return 0;
     }
-
 }

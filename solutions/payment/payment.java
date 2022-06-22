@@ -1,18 +1,18 @@
 package payment;
 
-import payment.*;
 import java.util.*;
 import java.io.*;
+
 public class payment {
     public static class Transaction implements Comparable<Transaction> {
         private long time;
         private String id;
         private String tier;
 
-        public Transaction(long time,String id,String tier){
-            this.time=time;
-            this.id=id;
-            this.tier=tier;
+        public Transaction(long time, String id, String tier) {
+            this.time = time;
+            this.id = id;
+            this.tier = tier;
         }
 
         public long getTime() {
@@ -41,113 +41,127 @@ public class payment {
 
         @Override
         public String toString() {
-            return time+" "+id+" "+tier;
+            return time + " " + id + " " + tier;
         }
 
         @Override
         public int compareTo(Transaction o) {
-            if(this.getTime()>o.getTime())
+            if (this.getTime() > o.getTime())
                 return -1;
-            else if(this.getTime()<o.getTime())
+            else if (this.getTime() < o.getTime())
                 return 1;
             else
                 return 0;
         }
     }
     
-    public static class MyQueue<E>  {
+    public static class MyQueue<E> {
         private java.util.LinkedList<E> list = new java.util.LinkedList<>();
 
-        public MyQueue(ArrayList e){
-            this.list=new LinkedList<E>(e);
+        public MyQueue(ArrayList e) {
+            this.list = new LinkedList<E>(e);
         }
 
-
-        public MyQueue(E[] e){
-            this.list=new LinkedList<E>(Arrays.asList(e));
+        public MyQueue(E[] e) {
+            this.list = new LinkedList<E>(Arrays.asList(e));
         }
 
-        public MyQueue(){
-            this.list=new LinkedList<E>();
+        public MyQueue() {
+            this.list = new LinkedList<E>();
         }
 
-        public void enqueue(E e){
+        public void enqueue(E e) {
             list.addLast(e);
         }
 
-        public void enqueue(ArrayList e){
+        public void enqueue(ArrayList e) {
             list.addLast((E) e);
         }
 
-
-        public E dequeue(){
+        public E dequeue() {
             return list.removeFirst();
         }
 
-        public E getElement(int i){
+        public E getElement(int i) {
             return list.get(i);
         }
 
-        public E peek(){
+        public E peek() {
             return list.peek();
         }
 
-        public int size(){
+        public int size() {
             return list.size();
         }
 
-        public E get(int i){
+        public E get(int i) {
             return list.get(i);
         }
 
-        public boolean contains(E e){
+        public boolean contains(E e) {
             return list.contains(e);
         }
 
-        public boolean isEmpty(){
+        public boolean isEmpty() {
             return list.isEmpty();
         }
 
-        public E poll(){
+        public E poll() {
             E element = list.peek();
             list.removeFirst();
             return element;
         }
 
-        public void set(int i, E element){
+        public void set(int i, E element) {
             list.set(i, element);
         }
 
-        public void clear(){
+        public void clear() {
             list.clear();
         }
-        public void toPrintQueue(){
-            for(int i=0;i< list.size();i++) {
-                System.out.println((i+1)+" "+list.get(i));
+
+        public void toPrintQueue() {
+            for (int i=0; i<list.size(); i++) {
+                System.out.println((i+1) + " " + list.get(i));
             }
         }
     }
-    
-    public static void main(String[] args) throws IOException{
-        long StartTime = new Date(). getTime(); //some tasks long lEndTime = new Date(). getTime(); long difference = lEndTime - lStartTime; System.
-        LinkedList<String>queue = new LinkedList<>();
-        ArrayList<Transaction>input = new ArrayList<>();
-        File dir = new File("C:\\Users\\USER\\IdeaProjects\\Batman-Team\\solutions\\payment\\cases");
-        File[]files=dir.listFiles();
 
-        if (files[0].isFile()){
-            Scanner sc=null;
+    /** The main method to start with 2 lines of input, end with printing 2 lines of output
+     *  @param args
+     *  @throws IOException */
+    public static void main(String[] args) throws IOException {
+        long StartTime = new Date(). getTime(); //some tasks long lEndTime = new Date(). getTime(); long difference = lEndTime - lStartTime; System.
+        // Create a LinkedList queue of String type
+        LinkedList<String> queue = new LinkedList<>();
+        // Create a ArrayList input of Transaction class type
+        ArrayList<Transaction> input = new ArrayList<>();
+        // Create a variable dir of File type to store the directory of payment test cases folder
+        File dir = new File("C:\\Users\\USER\\IdeaProjects\\Batman-Team\\solutions\\payment\\cases");
+        // List and store all the .txt files in an array files of File type
+        File[] files = dir.listFiles();
+
+        if (files[0].isFile()) {
+            Scanner sc = null;
             String word;
 
-            try{
-                sc=new Scanner(new FileInputStream(files[0]));
-                word=sc.nextLine();
+            try {
+                // Make an input stream of the particular .txt file
+                sc = new Scanner(new FileInputStream(files[0]));
+                // Store the line of String type in a variable word
+                word = sc.nextLine();
+                // Split the word contents and store them in an array element of String type
                 String[] element = word.split(" ");
+                // Store the first element in a variable time of long type
                 long time = Long.parseLong(element[0]);
+                /* Create an object t of Transaction class type and initialise it
+                   with time, the second and the third element in the array element */
                 Transaction t = new Transaction(time, element[1], element[2]);
+                // Append the object t in the ArrayList input
                 input.add(t);
 
-                long startnum =(( time % 10000)/1000);
+                // The formula to calculate the time in seconds at the most beginning
+                long startnum =((time % 10000)/1000);
 
                 while(sc.hasNextLine()){
                     word=sc.nextLine();
