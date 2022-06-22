@@ -1,8 +1,8 @@
 #!/bin/bash
-VERBOSE=$1
+VERBOSE=$1          
 TIMELIMIT=3s
-SOLUTION_FILE= payment/payment.java
-RUNNER_FILE=tasks/payment/run.py
+SOLUTION_FILE= payment/payment.java                                                     
+RUNNER_FILE=tasks/payment/run.py                                  
 mkfifo iopipe0 iopipe1
 
 if [[ $VERBOSE ]]

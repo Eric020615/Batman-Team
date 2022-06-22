@@ -312,6 +312,8 @@ Lubok Antu => Hulu Terengganu
 Lubok Antu => Samarahan
 Sri Aman => Kota Setar
 Labuan => Tebedu
+QUERIES
+1000
 Tongod -> Samarahan
 Labuan -> Kuala Terengganu
 Sibu -> Kota Setar

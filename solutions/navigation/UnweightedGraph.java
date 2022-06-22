@@ -10,26 +10,32 @@ public class UnweightedGraph<V> {
     public UnweightedGraph() {
     }
 
+    /** Get the number of vertices */
     public int getSize() {
         return vertices.size();
     }
 
+    /** Return vertices in a list */
     public List<V> getVertices() {
         return vertices;
     }
 
+    /** Get vertex info at a specific index/position */
     public V getVertex(int index) {
         return vertices.get(index);
     }
 
+    /** Get the index of vertices */
     public int getIndex(V v) {
         return vertices.indexOf(v);
     }
 
+    /** Get the degree of vertices */
     public int getDegree(int v) {
         return neighbors.get(v).size();
     }
 
+    /** Return all the neighbours of a vertex to an ArrayList */
     public List<Integer> getNeighbors(int index) {
         List<Integer> result = new ArrayList<>();
         List<String> neighbour = new ArrayList<>();
@@ -38,6 +44,7 @@ public class UnweightedGraph<V> {
         return result;
     }
 
+    /** Display all the neighbours of a vertex */
     public String showNeighbours(int index){
         List<Integer> result = new ArrayList<>();
         List<String> neighbour = new ArrayList<>();
@@ -50,6 +57,7 @@ public class UnweightedGraph<V> {
         return "The neighbours of "+getVertex(index)+" are : "+ neighbour;
     }
 
+    /** Print edges */
     public void printEdges() {
         for (int u = 0; u < neighbors.size(); u++) {
             System.out.print(getVertex(u) + " (" + u + "): ");
@@ -69,9 +77,10 @@ public class UnweightedGraph<V> {
 
     /** Add a vertex to the graph */
     public boolean addVertex(V vertex) {
+        //if the graph does not contain the vertex, add the vertex into graph
         if (!vertices.contains(vertex)) {
             vertices.add(vertex);
-            neighbors.add(new ArrayList<Edge>());
+            neighbors.add(new ArrayList<Edge>()); //add its neighbors to ArrayList
             return true;
         } else {
             return false;
@@ -94,11 +103,13 @@ public class UnweightedGraph<V> {
         }
     }
 
+    /** Add an edge to the graph */
     public boolean addEdge(int u, int v) {
         return addEdge(new Edge(u, v)) && addEdge(new Edge(v, u));
     }
 
-
+    /** Utility function to print the shortest distance
+     between source vertex and destination vertex   */
     public void printShortestDistance(int s, int dest, int v) {
         this.adjList = new ArrayList<ArrayList<Integer>>(getSize());
 
@@ -111,7 +122,9 @@ public class UnweightedGraph<V> {
             }
 
         }
-
+        // predecessor[i] array stores predecessor of
+        // i and distance array stores distance of i
+        // from s
         int pred[] = new int[v];
         int dist[] = new int[v];
 
@@ -121,6 +134,7 @@ public class UnweightedGraph<V> {
             return;
         }
 
+        //Display the shortest path from source to destination
         LinkedList<Integer> path = new LinkedList<Integer>();
         int crawl = dest;
         path.add(crawl);
@@ -140,17 +154,25 @@ public class UnweightedGraph<V> {
         }
     }
 
+    /** A queue to maintain queue of vertices whose
+     * adjacency list is to be scanned as per normal */
+    //DFS algorithm
     public boolean BFS(ArrayList<ArrayList<Integer>> adj, int src, int dest, int v, int pred[], int dist[]) {
         LinkedList<Integer> queue = new LinkedList<Integer>();
 
+        //Determine whether ith vertex is reached
+        //at least once in the Breadth first search
         boolean visited[] = new boolean[v];
 
+        //initially all vertices are unvisited so v[i] for all i is false
+        //and as no path is yet constructed dist[i] for all i set to infinity
         for (int i = 0; i < v; i++) {
             visited[i] = false;
             dist[i] = Integer.MAX_VALUE;
             pred[i] = -1;
         }
-
+        //now source is first to be visited and
+        //distance from source to itself should be 0
         visited[src] = true;
         dist[src] = 0;
         queue.add(src);

@@ -2,7 +2,7 @@
 #!/bin/bash
 VERBOSE=$1
 TIMELIMIT=3s
-SOLUTION_FILE=navigation/navigation
+SOLUTION_FILE=navigation/navigation.java
 mkfifo iopipe0 iopipe1
 
 if [[ $VERBOSE ]]
